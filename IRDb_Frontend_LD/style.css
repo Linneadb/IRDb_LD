@@ -1,0 +1,51 @@
+body {
+    background-color: #f6dada; /* Pastel Pink */ 
+}
+
+.header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    background-color: #ff9a8b; /* Pastel Orange */
+    margin-bottom: 20px;
+}
+
+.logo {
+    max-width: 100px;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+}
+
+.search-label {
+    margin-right: 10px;
+    color: #5e3f71; /* Dark Purple */
+}
+
+.movie-card {
+    margin-top: 30px;
+    margin-bottom: 20px;
+    background-color: #d4a5a5; /* Light Pink */
+}
+
+.card-title {
+    color: #5e3f71; /* Dark Purple */
+}
+
+.card-text {
+    color: #5e3f71; /* Dark Purple */
+}
+
+.btn-primary {
+    background-color: #ff7e67; /* Pastel Red */
+    border-color: #ff7e67; /* Pastel Red */
+}
+
+.btn-primary:hover {
+    background-color: #ff5e5b; /* Light Red */
+    border-color: #ff5e5b; /* Light Red */
+}
