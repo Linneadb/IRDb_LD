@@ -7,9 +7,9 @@ body {
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    padding: 0 20px;
+    padding: 40px 40px;
     background-color: #ff9a8b; /* Pastel Orange */
-    margin-bottom: 20px;
+    margin-bottom: 20 px;
 }
 
 .logo {
@@ -26,18 +26,35 @@ body {
     color: #5e3f71; /* Dark Purple */
 }
 
+#grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; /* Or use 'space-between' or 'space-evenly' for different spacing between items */
+}
+
 .movie-card {
+    height: 250px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     margin-top: 30px;
     margin-bottom: 20px;
     background-color: #d4a5a5; /* Light Pink */
 }
 
 .card-title {
+    text-align: center;
     color: #5e3f71; /* Dark Purple */
 }
 
 .card-text {
     color: #5e3f71; /* Dark Purple */
+}
+
+.movie-card .btn {
+    align-self: flex-end;
+    align-self: center;
 }
 
 .btn-primary {
