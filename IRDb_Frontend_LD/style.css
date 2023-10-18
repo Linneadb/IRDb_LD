@@ -49,3 +49,28 @@ body {
     background-color: #ff5e5b; /* Light Red */
     border-color: #ff5e5b; /* Light Red */
 }
+
+.line {
+    border: none;
+    height: 1px;
+    background-color: #1c242c;
+    margin: 20px 0;
+}
+
+.form-container {
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #ffffff; /* White background */
+}
+
+.form-title {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #007bff; /* Bootstrap primary color */
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
