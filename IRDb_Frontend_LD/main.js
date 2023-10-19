@@ -1,8 +1,9 @@
 //Select moviecard-grid
 const cardGrid = document.querySelector("#grid")
+getAllMovies();
 
 //GET ALL MOVIES
-
+function getAllMovies(){
 fetch('https://localhost:7144/api/Movies')
 .then(res=> res.json())
 .then((data) => 
@@ -10,7 +11,7 @@ fetch('https://localhost:7144/api/Movies')
   MakeMovieCards(data)
 })
 .catch(error => console.log(error))
-
+}
 
 function MakeMovieCards(data)
 {
@@ -66,8 +67,6 @@ function addMovie()
   };
   }
 
-  console.log(newMovie);
-
   //POST newMovie to database
 
   fetch('https://localhost:7144/api/Movies'
@@ -77,52 +76,35 @@ function addMovie()
           "Content-Type": "application/json",
       },
       body: JSON.stringify(newMovie),
-  });
-
-  //GET ALL MOVIES
-
-  fetch('https://localhost:7144/api/Movies')
-  .then(res=> res.json())
-  .then((data) => 
-  {
-    MakeMovieCards(data)
-  })
-  .catch(error => console.log(error))
-
+  }).then(() => {getAllMovies();})
+  ;
 };
-
 
 
 //SEARCH MOVIE
 
-//Select search input
-const searchInput = document.getElementById('search').value;
-
 //Select search button
 const searchBtn = document.getElementById('search-btn')
 
-//Select all movie cards
-const movieCards = Array.from(document.querySelectorAll(".movie-card"))
-
-//Select all movie card titles
-const movieTitles = Array.from(document.querySelectorAll(".card-title"))
-
-const oneTitle = document.querySelector(".card-title")
-
-
+//Eventlistener
 searchBtn.addEventListener('click', searchMovieTitle)
 
 function searchMovieTitle(){
-  console.log(searchInput)
-  console.log(searchBtn.innerText)
-  console.log(oneTitle)
-  console.log(movieTitles) //This is were I'm stuck...is the problem that I can not selct generated html?
-
+  //Select search input field
+  const searchInput = document.getElementById('search');
+  //Select all movie card titles
+  const movieTitles = Array.from(document.querySelectorAll(".card-title"))
   movieTitles.forEach(title => {
-    console.log(title.innerText)
-    if(searchInput == title.innerText)
+    if(searchInput.value.toLowerCase() == title.innerText.toLowerCase())
     {      
       title.parentElement.style.background = "#ffffff";
+      title.parentElement.parentElement.style.background = "#ffffff";
+    }
+    else
+    {
+      title.parentElement.style.background = "#dafb8";
+      title.parentElement.parentElement.style.background = "#dafb8";
+      searchInput.style.color = "red";
     }
   })
 }

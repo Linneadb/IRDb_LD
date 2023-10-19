@@ -36,13 +36,13 @@ namespace IRDb_LD.Controllers
 			if (movie != null)
 				return Ok(movie);
 			else
-				return NotFound("No movie with that id was found");
+				return NotFound($"No movie with id {id} was found in database");
 		}
 
 		[HttpPost]
 		public ActionResult<MovieModel> Post([FromBody] MovieModel movieToAdd)
 		{
-			if (!string.IsNullOrWhiteSpace(movieToAdd.Title))
+			if (!string.IsNullOrWhiteSpace(movieToAdd.Title) && movieToAdd.Title != "string")
 			{
 				MovieModel? addedMovie = _repo.AddMovie(movieToAdd);
 
@@ -58,12 +58,12 @@ namespace IRDb_LD.Controllers
 		[HttpPut("{id}")]
 		public ActionResult<MovieModel> Put([FromBody] MovieModel movieToUpdate, int id)
 		{
-			if (!string.IsNullOrWhiteSpace(movieToUpdate.Title))
+			if (!string.IsNullOrWhiteSpace(movieToUpdate.Title) && movieToUpdate.Title != "string")
 			{ 
 				MovieModel? updatedMovie = _repo.UpdateMovie(movieToUpdate, id);
 
 				if (updatedMovie == null)
-					return NotFound($"No movie with {id} exists in database");
+					return NotFound($"No movie with id {id} was found in database");
 				else
 					return Ok(updatedMovie);			
 			}
@@ -77,7 +77,7 @@ namespace IRDb_LD.Controllers
 			if (_repo.DeleteMovie(id) != null)
 				return Ok($"Movie with id {id} deleted");
 			else
-				return NotFound("No movie with that id was found");
+				return NotFound($"No movie with id {id} was found in database");
 			
 		}
 	}

@@ -51,7 +51,7 @@
                 </div>
                 <div class="form-group">
                     <label for="year">Year:</label>
-                    <input type="number" class="form-control" id="year" name="year" pattern="\d{4}" minlength="4" maxlength="4" placeholder="1984" required>
+                    <input type="number" class="form-control" id="year" name="year" type="number" min="1900" max="2099" step="1" placeholder="1984" required>
                 </div>
                 <div class="form-group">
                     <label for="genre">Genre:</label>
@@ -59,11 +59,11 @@
                 </div>
                 <div class="form-group">
                     <label for="duration">Duration (minutes):</label>
-                    <input type="number" class="form-control" id="duration" name="duration" min="1" max="999" placeholder="120" required>
+                    <input type="number" class="form-control" id="duration" name="duration" type="number" step="1" min="1" max="999" placeholder="120" required>
                 </div>
                 <div class="form-group">
                     <label for="rating">Rating (0.0-10.0):</label>
-                    <input type="number" class="form-control" id="rating" name="rating" step="0.1" min="0" max="10" placeholder="5.5" required>
+                    <input type="number" class="form-control" id="rating" name="rating" type="number" step="0.1" min="0" max="10" placeholder="5.5" required>
                 </div>
                 <button type="submit" class="btn btn-primary btn-block" id="submit-btn">Submit</button>
             </form>

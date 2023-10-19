@@ -1,5 +1,5 @@
 body {
-    background-color: #f6dada; /* Pastel Pink */ 
+    background-color: #f6dada;
 }
 
 .header {
@@ -34,7 +34,7 @@ body {
 #grid {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around; /* Or use 'space-between' or 'space-evenly' for different spacing between items */
+    justify-content: space-around;
 }
 
 .movie-card {
